@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="./css/carousel.css" />
+<div id="carousel">
+	<a href="javascript:;" class="move_a pre"></a>
+	<a href="javascript:;" class="move_a next"></a>
+	<ul id="carousel_ul"></ul>
+	<ul id="carousel_page"></ul>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="./js/carousel.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var carouselData = {
+			'initWidth':582,	//宽度
+			'initHeight':248,	//高度
+			'autoMove':1,		//自动移动
+			'moveStyle':1,		//移动方向1向右，0向左
+			'moveSpeed':2,		//移动速度 单位（秒）
+			//图片列表
+			'imgArray':[
+				'./images/banner1.jpg',
+				'./images/banner2.jpg',
+				'./images/banner3.jpg',
+				'./images/banner4.jpg'
+			],
+			//链接列表
+			'aImgArray':['#1','#2','#3','#4']
+		};
+		carousel = new carouselBegin(carouselData);
+		carousel.initCarousel();
+	})
+	
+	
+</script>

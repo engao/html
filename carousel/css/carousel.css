@@ -1,0 +1,65 @@
+*{margin:0;padding:0;border: 0;font-style: normal;}
+	ul{list-style: none;}
+
+	a{text-decoration: none; color:#000;}
+	#carousel{
+		margin:0 auto;
+		position: relative;
+		overflow: hidden;
+	}
+	.move_a{
+		position: absolute;
+		top:50%;
+		margin-top: -20px;
+		height: 40px;
+		width: 40px;
+		text-align: center;
+		line-height: 40px;
+		border-radius: 40px;
+		background: url("../images/pre_next_move.png");
+		font-family: serif;
+		display: none;
+		filter:alpha(Opacity=80);-moz-opacity:0.5;opacity: 0.5;
+		z-index: 20;
+	}
+	.pre{
+		left:10px;
+
+	}
+	.next{
+		right:10px;
+		background-position: -40;
+	}
+	#carousel_ul{
+		position: absolute;
+		left:0;
+		top:0;
+		z-index: 10;
+	}
+	#carousel li{
+		float:left;
+	}
+	#carousel_page{
+		position: absolute;
+		bottom: 10px;
+		margin: auto;
+		left:50%;
+		z-index: 20;
+	}
+	#carousel_page li{
+		float:left;
+		width: 10px;
+		height: 10px;
+		background: #FFF;
+		margin-left:10px;
+		cursor:pointer;
+		background: url("../images/move_buttom.png");
+		transition: width 1s, background 1s;
+		-moz-transition: width 1s, background 0.5s; /* Firefox 4 */
+		-webkit-transition: width 1s, background 0.5s; /* Safari and Chrome */
+		-o-transition: width 1s, background 0.5s; /* Opera */
+	}
+	#carousel_page li.selected{
+		background-position: -10px;
+		width: 20px;
+	}
