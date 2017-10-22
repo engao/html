@@ -7,7 +7,8 @@
 <body>
 
 	<div id="out_box">
-		<a href="javascript:;" id="showPopul">弹窗</a>
+		<a href="javascript:;" id="showPopul" class="showPopul">弹窗</a>
+		<a href="javascript:;" id="showPopul2" class="showPopul">弹窗2</a>
 	</div>
 
 	<script type="text/html" id="popContent">
@@ -16,18 +17,44 @@
 		<div><input type="button" value="提交"></div>
 	</script>
 
+
+	<script type="text/html" id="popContent2">
+		<div>登录用户2：<input	type="text" name="username" /></div>
+		<div>登录密码2：<input	type="password" name="password" /></div>
+		<div><input type="button" value="提交2"></div>
+	</script>
 	
 </body>
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="./js/popup.js"></script>
 <script type="text/javascript">
+
+
+	var popul = new kelPopul();
+	//如果需要关闭调用 close方法 popul.close();
+	
 	var data = {
 		'width':400,
 		'height':170,
 		'title':'登录',
 	};
 	var html = $($('#popContent').html());
-	var popul = new kelPopul(data,html);
-	popul.run();
+	$('#showPopul').click(function(){
+		popul.run(data, html);
+	});
+
+
+
+	var data2 = {
+		'width':500,
+		'height':170,
+		'title':'登录2',
+	};
+	var html2 = $($('#popContent2').html());
+	$('#showPopul2').click(function(){
+		popul.run(data2, html2);
+	});
+	
+
 </script>
 </html>
